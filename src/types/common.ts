@@ -1,0 +1,19 @@
+export interface ApiResponse<T = any> {
+  success: boolean;
+  message?: string;
+  data?: T;
+}
+
+export interface ApiError {
+  success: false;
+  message: string;
+  errors?: Record<string, string[]>;
+}
+
+export interface LikeResponse {
+  success: boolean;
+  data: {
+    is_liked: boolean;
+    likes_count: number;
+  };
+}
