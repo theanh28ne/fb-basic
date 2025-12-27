@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import type { RouteRecordRaw } from "vue-router";
 import { authService } from "@/services/authService";
 
@@ -52,7 +52,8 @@ const routes: RouteRecordRaw[] = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  // ✅ THAY ĐỔI CHỖ NÀY
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes,
 });
 
